@@ -36,7 +36,6 @@ jQuery(function() {
 
     socket.onmessage = function(event) {
       const data = JSON.parse(event.data)
-      console.log(data);
 
       if (data.b) {
         $(".price").html(`$${data.b}`)  
