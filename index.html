@@ -7,6 +7,26 @@
     <title>Dogecoin Price Widget | enVarg</title>
 
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .coin-icon,
+      .coin-data {
+        display: none;
+      }
+
+      .coin-icon img {
+        width: 64px;
+      }
+
+      .coin-data .price {
+        font-size: 1.75rem;
+      }
+
+      .coin-data .card-subtitle {
+        margin-bottom: 6px;
+        font-size: 1.5rem;
+      }
+    </style>
   </head>
 <body>
 
@@ -14,13 +34,17 @@
     <div class="card-body">
       
       <div class="row">
-        <div class="col-4 text-center">
+        <div class="col-12 text-center socket-status">
           <img src="./assets/img/dogecoin.png" style="width: 64px;">
         </div>
 
-        <div class="col-8">
-          <h4 class="card-subtitle text-muted" style="margin-bottom: 6px; font-size: 1.5rem;">Dogecoin</h4>
-          <h3 class="card-title price mb-0" style="font-size: 1.75rem;">-----</h3>
+        <div class="col-4 text-center coin-icon">
+          <img src="./assets/img/dogecoin.png">
+        </div>
+
+        <div class="col-8 coin-data">
+          <h4 class="card-subtitle text-muted">Dogecoin</h4>
+          <h3 class="card-title price mb-0">-----</h3>
         </div>
       </div>
       

@@ -19,6 +19,13 @@ jQuery(function() {
 
     socket.onopen = function() {
       socket.send(JSON.stringify(msgSubscribe));
+
+      setTimeout(function(){ 
+        $('.socket-status').hide()
+        $('.coin-icon').show()
+        $('.coin-data').show()
+      }, 1500);
+
     };
 
     socket.onclose = function(event) {
@@ -28,10 +35,18 @@ jQuery(function() {
         // server process killed or network down
         alert('[close] Connection died');
       }
+
+      $('.socket-status').show()
+      $('.coin-icon').hide()
+      $('.coin-data').hide()
     };
 
     socket.onerror = function(error) {
       console.log(`[error] ${error.message}`);
+
+      $('.socket-status').show()
+      $('.coin-icon').hide()
+      $('.coin-data').hide()
     };
 
     socket.onmessage = function(event) {
