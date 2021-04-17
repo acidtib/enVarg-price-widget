@@ -1,0 +1,17 @@
+.coin-icon,
+.coin-data {
+  display: none;
+}
+
+.coin-icon img {
+  width: 64px;
+}
+
+.coin-data .price {
+  font-size: 1.75rem;
+}
+
+.coin-data .card-subtitle {
+  margin-bottom: 6px;
+  font-size: 1.5rem;
+}
