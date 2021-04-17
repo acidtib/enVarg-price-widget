@@ -4,56 +4,61 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Dogecoin Price Widget | enVarg</title>
+    <title>Price Widget | enVarg</title>
 
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-      .coin-icon,
-      .coin-data {
-        display: none;
-      }
-
-      .coin-icon img {
-        width: 64px;
-      }
-
-      .coin-data .price {
-        font-size: 1.75rem;
-      }
-
-      .coin-data .card-subtitle {
-        margin-bottom: 6px;
-        font-size: 1.5rem;
+      html,
+      body {
+        background-color: #000;
       }
     </style>
   </head>
 <body>
 
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      
-      <div class="row">
-        <div class="col-12 text-center socket-status">
-          <img src="./assets/img/coins/dogecoin.png" style="width: 64px;">
-        </div>
-
-        <div class="col-4 text-center coin-icon">
-          <img src="./assets/img/coins/dogecoin.png">
-        </div>
-
-        <div class="col-8 coin-data">
-          <h4 class="card-subtitle text-muted">Dogecoin</h4>
-          <h3 class="card-title price mb-0" data-lastprice="0">-----</h3>
+  <div class="container">
+    <div class="row mt-5 pt-4 text-center">
+      <div class="col-md-4 mb-4">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="http://localhost:8000/doge-dark.html"></iframe>
         </div>
       </div>
-      
+
+      <div class="col-md-4 mb-4">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="http://localhost:8000/btc-dark.html"></iframe>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="http://localhost:8000/mana-dark.html"></iframe>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="http://localhost:8000/eth-dark.html"></iframe>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="http://localhost:8000/bch-dark.html"></iframe>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="http://localhost:8000/xlm-dark.html"></iframe>
+        </div>
+      </div>
     </div>
   </div>
 
   <script src="./assets/js/bootstrap.bundle.min.js"></script>
   <script src="./assets/js/jquery.min.js"></script>
-  <script src="./assets/js/app.js"></script>
-      
+
 </body>
 </html>
