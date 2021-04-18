@@ -11,6 +11,7 @@ Decentraland | https://dabois.capital/mana.html <br /> https://dabois.capital/ma
 Ethereum | https://dabois.capital/eth.html <br /> https://dabois.capital/eth-dark.html
 Bitcoin Cash | https://dabois.capital/bch.html <br /> https://dabois.capital/bch-dark.html
 Stellar | https://dabois.capital/xlm.html <br /> https://dabois.capital/xlm-dark.html
+Litecoin | https://dabois.capital/ltc-dark.html
 
 ## Stream Labs OBS
 ![](assets/img/obs.png)
