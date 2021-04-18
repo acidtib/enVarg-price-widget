@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Price Widget | enVarg</title>
+
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/css/app.css" rel="stylesheet">
+
+    <style>
+      body,
+      html,
+      body .card {
+        background-color: #000;
+      }
+    </style>
+  </head>
+<body>
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      
+      <div class="row">
+        <div class="col-12 text-center socket-status">
+          <img src="./assets/img/coins/litecoin.png" style="width: 64px;">
+        </div>
+
+        <div class="col-4 text-center coin-icon">
+          <img src="./assets/img/coins/litecoin.png">
+        </div>
+
+        <div class="col-8 coin-data">
+          <h4 class="card-subtitle text-muted">Litecoin</h4>
+          <h3 class="card-title price mb-0" data-lastprice="0">-----</h3>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/jquery.min.js"></script>
+  <script src="./assets/js/helper.js"></script>
+
+  <script>
+    jQuery(function() {
+  
+      // check if websocket is supported on the browser
+      if (!window.WebSocket) {
+        alert("Browser does not support the WebSocket API!")
+      } else {
+
+        // https://github.com/binance-us/binance-official-api-docs/blob/master/web-socket-streams.md
+    
+        const binanceSocket = "wss://stream.binance.us:9443/ws"
+    
+        const msgSubscribe = {
+          method: 'SUBSCRIBE',
+          params: ['ltcusd@bookTicker'],
+          id: 1337,
+        }
+    
+        socket = new WebSocket(binanceSocket)
+    
+        socket.onopen = function() {
+          socket.send(JSON.stringify(msgSubscribe))
+    
+          setTimeout(function(){ 
+            $('.socket-status').hide()
+            $('.coin-icon').show()
+            $('.coin-data').show()
+          }, 1500)
+    
+        }
+    
+        socket.onclose = function(event) {
+          if (event.wasClean) {
+            alert(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`)
+          } else {
+            // server process killed or network down
+            alert('[close] Connection died')
+          }
+    
+          $('.socket-status').show()
+          $('.coin-icon').hide()
+          $('.coin-data').hide()
+        }
+    
+        socket.onerror = function(error) {
+          console.log(`[error] ${error.message}`)
+    
+          $('.socket-status').show()
+          $('.coin-icon').hide()
+          $('.coin-data').hide()
+        }
+    
+        socket.onmessage = function(event) {
+          const data = JSON.parse(event.data)
+
+          if (data.b) {
+            b_diff(data.b, true)
+          }
+          
+        }
+    
+      } 
+    
+    })
+  </script>
+      
+</body>
+</html>
