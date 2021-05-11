@@ -13,6 +13,7 @@ Bitcoin Cash | https://dabois.capital/bch.html <br /> https://dabois.capital/bch
 Stellar | https://dabois.capital/xlm.html <br /> https://dabois.capital/xlm-dark.html
 Litecoin | https://dabois.capital/ltc-dark.html
 Cardano | https://dabois.capital/ada-dark.html
+Ethereum Classic | https://dabois.capital/etc-dark.html
 
 ## Stream Labs OBS
 ![](assets/img/obs.png)
