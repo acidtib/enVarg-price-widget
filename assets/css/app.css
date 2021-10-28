@@ -3,6 +3,10 @@
   display: none;
 }
 
+.coin-data {
+  white-space: nowrap;
+}
+
 .coin-icon img {
   width: 64px;
 }
